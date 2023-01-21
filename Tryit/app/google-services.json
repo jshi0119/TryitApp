@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "412403946886",
+    "project_id": "tryit-99132",
+    "storage_bucket": "tryit-99132.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412403946886:android:6c720735033ee8b33c4807",
+        "android_client_info": {
+          "package_name": "com.shish.tryit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412403946886-u81mkhbtfc2a86odlk3q6gkr06pm3jcr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shish.tryit",
+            "certificate_hash": "e88c51a4a6a740fa6415f4710108fd287d944e95"
+          }
+        },
+        {
+          "client_id": "412403946886-h3g0rfmakblp28iba483l4rgfuhbhgeh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdyZmrquQZni_YAwxlC0ZaI-sfZpBnxRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412403946886-h3g0rfmakblp28iba483l4rgfuhbhgeh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
