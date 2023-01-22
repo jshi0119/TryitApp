@@ -4,8 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#000000"
+    android:backgroundTintMode="src_over"
+    android:foregroundTint="#A3A3A3"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_activity_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/translucent_shadow_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@drawable/gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/background_image_view"
+        app:layout_constraintTop_toTopOf="@+id/background_image_view"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/circle_shadow"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/circle_shadow"
+        app:layout_constraintEnd_toEndOf="@+id/circle"
+        app:layout_constraintStart_toStartOf="@+id/circle"
+        app:layout_constraintTop_toTopOf="@+id/circle" />
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:src="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/app_name_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/app_name_text_view" />
 
     <TextView
         android:id="@+id/app_name_text_view"
@@ -15,7 +61,7 @@
         android:fontFamily="monospace"
         android:text="Tryit!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#002F55"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
