@@ -1,5 +1,6 @@
 package com.shish.tryit
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +9,10 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -79,9 +83,39 @@ class MainActivity : AppCompatActivity() {
             val logoutIntent = Intent(this, LoginActivity::class.java)
             logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             updateUI(logoutIntent)
+        } else if (item.itemId == R.id.edit_movie_menu_item) {
+            Log.i(TAG, "Show alert dialog for edit status")
+            showAlertDialog()
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun showAlertDialog() {
+        val movieRecEditText = EditText(this)
+
+        val dialog = AlertDialog.Builder(this@MainActivity)
+            .setTitle("Update your movie recommendation")
+            .setView(movieRecEditText)
+            .setNegativeButton("Cancel", null)
+            .setPositiveButton("Update", null)
+            .show()
+
+        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
+            Log.i(TAG, "Update button clicked")
+            val movieInput = movieRecEditText.text.toString()
+
+            val currentUser = auth.currentUser
+            if (currentUser == null) {
+                Toast.makeText(
+                    this@MainActivity, "User not signed in", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            database.collection("users").document(currentUser.uid)
+                .update("movie", movieInput)
+            dialog.dismiss()
+        }
     }
 
     private fun updateUI(intent: Intent?) {
