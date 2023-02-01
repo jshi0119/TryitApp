@@ -1,2 +1,2 @@
 # TryitApp
-Android app to share and receive movie reccomendations from people near and far!
+Android app to share and receive movie recommendations from people near and far!
