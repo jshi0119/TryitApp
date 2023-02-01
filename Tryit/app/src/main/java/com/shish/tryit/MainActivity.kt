@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         val movieRecEditText = EditText(this)
 
         val dialog = AlertDialog.Builder(this@MainActivity)
-            .setTitle("Update your movie recommendation")
+            .setTitle("New movie recommendation:")
             .setView(movieRecEditText)
             .setNegativeButton("Cancel", null)
             .setPositiveButton("Update", null)
